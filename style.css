@@ -1,0 +1,92 @@
+/* HEAD */
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh; /* hoặc: height: calc(var(--vh, 1vh) * 100); */
+  background: radial-gradient(circle at center, #000010 0%, #000000 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+/* Cảnh báo landscape phong cách vũ trụ */
+#landscape-warning {
+  display: none !important;
+}
+
+button[onclick="playMusic()"] {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 1001;
+  padding: 12px 28px;
+  font-size: 18px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.95;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+button[onclick="playMusic()"]:hover {
+  background: #444;
+  opacity: 1;
+}
+
+#start-overlay {
+  display: none !important;
+}
+
+#dark-overlay {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 30, 0.92);
+  pointer-events: none;
+  transition: opacity 0.6s;
+  opacity: 1;
+}
+
+.rotate-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotate-phone 1.6s infinite cubic-bezier(.4,2,.6,1);
+}
+
+@keyframes rotate-phone {
+  0% { transform: rotate(-18deg); }
+  20% { transform: rotate(18deg); }
+  40% { transform: rotate(-18deg); }
+  100% { transform: rotate(-18deg); }
+}
+
+/* >>>>>>> 9502ce0db30f9420a500a663222084659d2848f2 */
